@@ -26,7 +26,7 @@ sequenceDiagram
     deactivate Browser
 
     activate Server
-    Server-->>Browser: Returns de notes page
+    Server-->>Browser: Returns the notes page
     deactivate Server
 
     Browser-->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
