@@ -3,10 +3,13 @@
 
 ```mermaid
 sequenceDiagram
+    participant User
     participant Browser
     participant Server
 
-    Note right of Browser: Data to send: "note": [String]
+    User->>Browser: SUBMIT FORM "text"=[string]
+
+    Note right of Browser: Data to send: "note": [text]
 
     Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
   
