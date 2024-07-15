@@ -48,7 +48,7 @@ sequenceDiagram
     deactivate Server
 
     activate Browser       
-    Note right of Browser: Translates JSON data to LI DOM elemets and append them to UL and rendering them.
+    Note right of Browser: Translates JSON data to LI DOM elements and appends them to UL to render them.
     deactivate Browser
 
 ```
