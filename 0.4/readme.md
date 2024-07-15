@@ -17,14 +17,38 @@ sequenceDiagram
     Server-->>Browser: 302 Found REDIRECT to https://studies.cs.helsinki.fi/exampleapp/notes
     deactivate Server
 
-    activate Browser
-       
-    Note right of Browser: Executes Server request for a redirection  
-    
+    activate Browser       
+    Note right of Browser: Executes Server request for a redirection    
     Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     deactivate Browser
 
     activate Server
-    Server-->>Browser: The original notes page with the new note added
+    Server-->>Browser: Returns de notes page
     deactivate Server
+
+    Browser-->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+
+    activate Server
+    Server-->>Browser: Returns main.css file with styles
+    deactivate Server
+
+    Browser-->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+
+    activate Server
+    Server-->>Browser: Returns main.js file with javascript coded to be executed
+    deactivate Server
+
+    activate Browser       
+    Note right of Browser: Executes Javascript received by server and requests for data    
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    deactivate Browser
+
+    activate Server
+    Server-->>Browser: Returns data.json: [{"content": "test", "date": "2024-07-15T07:53:17.198Z" }...]
+    deactivate Server
+
+    activate Browser       
+    Note right of Browser: Translates JSON data to LI DOM elemets and append them to UL and rendering them.
+    deactivate Browser
+
 ```
